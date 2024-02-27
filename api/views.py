@@ -2,26 +2,18 @@
 from django.http import JsonResponse
 from apps.core.models import Category, Job, Contact, JobApplication
 
-def category(request):
-    category= Category.objects.get(id=5)
-    return JsonResponse({
-        "uuid": category.uuid,
-        "created_at": category.created_at,
-        "updated_at": category.updated_at,
-        "title": category.title
-    })
 
-#  def category(request):
-#     categories = Category.objects.all()
-#     response = []
-#     for category in categories:
-#         response.append({
-#             "uuid": category.uuid,
-#             "created_at": category.created_at,
-#             "updated_at": category.updated_at,
-#             "title": category.title
-#         })
-#         return JsonResponse(response, safe=False)
+def category(request):
+    categories = Category.objects.all()
+    response = []
+    for category in categories:
+        response.append({
+            "uuid": category.uuid,
+            "created_at": category.created_at,
+            "updated_at": category.updated_at,
+            "title": category.title
+        })
+    return JsonResponse(response, safe=False)
 
 
 
@@ -53,7 +45,7 @@ def contact(request):
             "phone_number": contact.phone_number,
             "message": contact.message
         })
-        return JsonResponse(response, safe=False)
+    return JsonResponse(response, safe=False)
 
 
 def jobapplication(request):
@@ -70,4 +62,4 @@ def jobapplication(request):
             "user_id": jobapplication.user_id
 
         })
-        return JsonResponse(response, safe=False)
+    return JsonResponse(response, safe=False)
