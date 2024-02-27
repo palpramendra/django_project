@@ -38,7 +38,7 @@ def job(request):
             "is_active": job.is_active,
             "category_id": job.category_id
         })
-        return JsonResponse(response, safe=False)
+    return JsonResponse(response, safe=False)
 
 def contact(request):
     contacts = Contact.objects.all()
