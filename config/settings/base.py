@@ -12,7 +12,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-PROJECT_APPS = ["apps.account", "apps.commons", "apps.core"]
+PROJECT_APPS = ["apps.account", "apps.commons", "apps.core", "api"]
 THIRD_PARTY_APPS = ['crispy_forms', 'crispy_bootstrap4']
 INSTALLED_APPS += PROJECT_APPS + THIRD_PARTY_APPS
 

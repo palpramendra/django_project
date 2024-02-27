@@ -39,6 +39,9 @@ class JobApplication(BaseModel):
     interview_date = models.DateTimeField(null=True, blank=True)
     status = models.CharField(choices=status_choices, max_length=20)
 
+    def __str__(self):
+        return f"Job application form {self.user.email}"
+
 
 class Contact(BaseModel):
     name = models.CharField(max_length=20)
